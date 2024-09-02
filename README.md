@@ -1,59 +1,62 @@
 
 # fbgrouter
 
-fbgrouter es un paquete de Python diseñado para facilitar la creación y gestión de rutas en aplicaciones web. Este paquete está pensado para desarrolladores que buscan una solución simple y eficiente para manejar el enrutamiento en sus proyectos.
+**fbgrouter** es un paquete de Python diseñado para facilitar la creación y gestión de rutas en aplicaciones web. Ofrece una estructura flexible y fácil de usar para manejar las rutas de manera eficiente.
 
 ## Características
 
-- Gestión sencilla de rutas.
-- Soporte para diferentes tipos de métodos HTTP.
-- Fácil integración con aplicaciones existentes.
+- Definición de rutas simples y claras
+- Soporte para rutas dinámicas
+- Integración sencilla con aplicaciones existentes
+- Extensible para manejar necesidades complejas de enrutamiento
 
 ## Instalación
 
-Puedes instalar el paquete directamente desde GitHub utilizando pip:
+Puedes instalar el paquete utilizando pip:
 
 ```bash
-pip install git+https://github.com/usuariomen/fbgrouter.git
+pip install fbgrouter
 ```
 
-## Uso
+También puedes encontrar el paquete en [PyPI](https://pypi.org/project/fbgrouter/).
 
-Aquí tienes un ejemplo básico de cómo utilizar `fbgrouter`:
+## Uso básico
+
+A continuación se muestra un ejemplo básico de cómo utilizar **fbgrouter** en tu aplicación:
 
 ```python
-from fbgrouter import Router, RequestHandler
+from fbgrouter import Router, Route
 
-# Definir rutas
 router = Router()
 
-@router.route("/")
-def home(request):
-    return "Bienvenido a la página principal"
+@router.route("/home")
+def home():
+    return "Welcome to the home page!"
 
 @router.route("/about")
-def about(request):
-    return "Acerca de nosotros"
+def about():
+    return "This is the about page."
 
-# Ejecutar el servidor
-if __name__ == "__main__":
-    router.run(host="0.0.0.0", port=8080)
+# Ejecutar la aplicación
+router.run()
 ```
 
-## Contribuir
+Este código creará un enrutador simple con dos rutas: `/home` y `/about`.
 
-Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+## Contribuyendo
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza los cambios necesarios y haz commit de ellos (`git commit -m 'Añadir nueva funcionalidad'`).
-4. Sube los cambios a tu repositorio (`git push origin feature/nueva-funcionalidad`).
+Si deseas contribuir al desarrollo de este paquete, siéntete libre de realizar un fork del repositorio, crear una rama, realizar tus cambios y enviar un pull request. Cualquier contribución es bienvenida.
+
+1. Realiza un fork del proyecto.
+2. Crea una nueva rama (`git checkout -b feature/mi-nueva-funcionalidad`).
+3. Realiza tus cambios (`git commit -am 'Agregar nueva funcionalidad'`).
+4. Envía tus cambios (`git push origin feature/mi-nueva-funcionalidad`).
 5. Abre un Pull Request.
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+Este proyecto está licenciado bajo la MIT License - mira el archivo [LICENSE](LICENSE) para más detalles.
 
-## Contacto
+## Autor
 
-Para cualquier duda o consulta, puedes contactarme en [tu.email@example.com](mailto:tu.email@example.com).
+Creado por **Franco Bernal**. Puedes encontrar más proyectos en mi [GitHub](https://github.com/franco-bernal/fbgrouter).
